@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/bg/场景_始发.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* 多出直接隐藏，避免出现页面滚动条 */
+    overflow: hidden;
+    position: relative;
+}
+/* .dialog{
+    width: 500px;
+    height: 500px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    
+    background-color: rgba(64, 64, 64, 0.95);
+
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 1000;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+
+    border: solid 1px white;
+    
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+} */
+
+.todoDialog {
+    background-color: #fff;
+    width: 500px;
+    position: fixed;
+    top: 100px;
+    right: 500px;
+    border: solid 1px rgb(55, 55, 55);
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+    padding: 30px 30px 15px 30px;
+}
+
+
+.todoDialog {
+    visibility: visible;
+}
+
+.hide{
+    display: none;
+}
