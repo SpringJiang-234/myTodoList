@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/todo.css">
+</head>
+<body class="row">
+    <div class="left-panel col-md-4">
+        <div class="left-header">
+            <div id="return-button" onclick="linkToIndex()"><div></div></div>
+            <div id="home-button" onclick="linkToIndex()"></div>
+        </div>
+        <div class="left-main reward">
+            <div class="reward-item">Ciallo～(∠・ω< )⌒★</div>
+            <div class="reward-item">给我玩明日方舟</div>
+            <div class="reward-item">长风破浪会有时</div>
+            <div class="reward-item">直挂云帆济沧海</div>
+            <div class="reward-item">Ciallo～(∠・ω< )⌒★</div>
+            <div class="reward-item">Ciallo～(∠・ω< )⌒★</div>
+            <div class="reward-item">Ciallo～(∠・ω< )⌒★</div>
+            <div class="reward-item">Ciallo～(∠・ω< )⌒★</div>
+        </div>
+    </div>
+    <div class="right-panel col-md-8">
+        <div class="right-header">
+            <!-- 小提示 -->
+            <div class="tip" onclick="dialogTip()"><img src="./image/todo/信息提示_1750814818.png" alt=""></div>
+            <!-- 日常任务 -->
+            <div class="tab tab-active" onclick="tabActive(this,'day')">
+                <span>日常任务</span>
+            </div>
+            <!-- 周常任务 -->
+            <div class="tab" onclick="tabActive(this,'week')">
+                <span>周常任务</span>
+            </div>
+            <!-- 支线任务 -->
+            <div class="tab" onclick="tabActive(this,'default')">
+                <span>其他任务</span>
+            </div>
+        </div>
+        <div class="right-main" id="todo-list">
+            <!-- 任务存放处，需要请求然后循环放置标题，点击即可弹出弹框写明具体细节（内容等） -->
+            <!-- <div class="todo-item">
+                <div class="todo-item-complete-button">
+                    <img src="./image/todo/国际象棋车_1750826775.png" alt="">
+                    <span class="span0">0</span><span class="span1">/1</span>
+                    <div></div>
+                </div>
+                <span class="todo-item-title">搓客户端页面</span>
+                <span class="todo-item-en">Title：</span>
+            </div> -->
+        </div>
+    </div>
+    <div class="footer"></div>
+
+    <script src="./lib/jquery-3.6.1.min.js"></script>
+    <script src="./js/todo.js"></script>
+</body>
+</html>

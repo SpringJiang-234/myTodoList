@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 使用户鼠标不会在靠近按钮文字时变成输入状态 */
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/bg/场景_始发.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* 多出直接隐藏，避免出现页面滚动条 */
+    overflow: hidden;
+    position: relative;
+}
+
+/* 临时背景色 */
+.left-panel {
+    height: 100vh;
+    /* background-color: skyblue; */
+}
+
+.right-panel {
+    height: 100vh;
+    /* background-color: pink; */
+}
+
+/* 按钮 */
+/* 左边 */
+#return-button,
+#home-button {
+    height: 50px;
+    position: absolute;
+    top: 13px;
+    background-color: rgb(64, 64, 64);
+
+    box-shadow: rgba(98, 98, 98, 0.63) 4px 6px 6px;
+}
+
+#return-button {
+    width: calc(100% - 45px - 270px);
+    left: 30px;
+}
+
+#return-button>div {
+    height: 30px;
+    width: 30px;
+    border-top: #fff solid 2px;
+    border-left: #fff solid 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+#home-button {
+    width: 270px;
+    left: calc(100% - 45px - 270px + 30px);
+    border-left: solid black 1px;
+}
+
+/* 右边 */
+.right-header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tip,
+.tab {
+    margin-top: 13px;
+    height: 50px;
+}
+
+.tip {
+    padding: 5px;
+    margin-right: 30px;
+    background-color: #737373d8;
+    box-shadow: rgba(98, 98, 98, 0.63) -4px 6px 6px;
+    border-bottom: #ffffff50 1px solid;
+}
+.tip>img{
+    height: 40px;
+    border: solid 2px rgba(255, 255, 255, 0.416);
+    border-radius: 50%;
+    box-shadow: #787878 0px 0px 5px;
+}
+
+.tab {
+    width: 320px;
+    /* border: black solid 1px; */
+    background-color: rgb(214, 218, 221);
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(98, 98, 98, 0.63) -4px 6px 6px;
+    border-bottom: 3px #404040 solid;
+
+    color: #404040;
+
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.tab-active{
+    background-color: #404040;
+    border-bottom: 3px #3271c3 solid;
+    box-shadow: rgba(62, 62, 62, 0.63) -4px 8px 6px;
+
+    color: #d6dadd;
+}
+
+/* 主体部分 */
+.right-main,.left-main{
+    /* background-color: #fff; */
+    height: calc(100vh - 84px - 15px);
+    border-radius: 5px 5px 0 0;
+
+    /* 滚动条设置 */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.left-main{
+    margin-top: 84px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.reward{
+    width: calc(100% - 18px);
+    /* height: calc(100vh - 84px - 15px); */
+    background-color: rgba(214, 218, 221,0.9);
+    padding-top: 10px;
+}
+.reward-item{
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+
+    height: 65px;
+    border-radius: 5px;
+
+    margin-top: 40px;
+
+    background-color: #404040;
+
+    color: #d6dadd;
+
+    text-align: center;
+    line-height: 65px;
+
+    text-shadow: #ffffff0e 1px 1px 1px;
+}
+
+.todo-item{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(214, 218, 221,0.9);
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    background-image: url(../image/todo/Logo_罗德岛.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.todo-item>.todo-item-en,
+.todo-item>.todo-item-title,
+.todo-item>.todo-item-complete-button{
+    height: 70px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.todo-item>.todo-item-en{
+    line-height: 24px;
+    color: #6e6e6e;
+    background-color: #404040;
+    height: 30px;
+    margin-top: 35px;
+    padding: 3px;
+    border-radius: 5px;
+}
+.todo-item>.todo-item-title{
+    display: block;
+    width: 550px;
+    line-height: 70px;
+    font-weight: 500;
+}
+.todo-item>.todo-item-complete-button{
+    width: 210px;
+    background-color: #404040;
+    border-radius: 5px;
+    position: relative;
+}
+.todo-item>.todo-item-complete-button>img{
+    margin: 5px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+}
+.todo-item>.todo-item-complete-button>div{
+    width: 130px;
+    height: 8px;
+    /* 已完成 */
+    /* background-color:#3271c3; */
+    /* 未完成 */
+    background-color:#6e6e6e;
+    border: 3px solid #6e6e6e;
+    border-radius: 5px;
+    
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+}
+/* .todo-item-complete-colorful{
+    background-color:#3271c3;
+} */
+
+.todo-item>.todo-item-complete-button .span0,
+.todo-item>.todo-item-complete-button .span1 {
+    font-size: 18px;
+    color: #bcbcbc;
+    position: absolute;
+    right: 80px;
+    bottom: 25px;   
+}
+.todo-item>.todo-item-complete-button .span0{
+    font-size: 20px;
+    color: white;
+    right: 100px;
+}
+
+/*下方遮罩层*/
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 110%;
+    height: 15px;
+    background-color: rgba(0, 0, 255, 0.5);
+    z-index: 999;
+}
+
+#all-classify{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 60px;
+    border-right: #d6dadd solid 3px;
+}
+.btn-ahh1,
+.btn-ahh{
+    background-color: #d6dadd;
+    border-radius: 5px;
+    box-shadow: rgba(98, 98, 98, 0.63) -4px 6px 6px;
+
+    color: #404040; 
+}
+
+.btn-ahh1{
+    margin-left: 50px;
+}

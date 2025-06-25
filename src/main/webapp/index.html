@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>舟风主页</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/swiper-11.0.3/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="favorite-staff-box">
+        <!-- <img id="favorite-staff" src="./image/index/立绘_阿米娅_1.png" alt="" onclick="say()"> -->
+        <img id="favorite-staff" src="./image/index/立绘_阿米娅_1.png" alt="">
+        <div id="unhide" onclick="panelUnhide()">
+            <div></div>
+        </div>
+    </div>
+    <div class="row outermost-panel">
+        <div class="col-md-4 left-panel">
+            <div class="left-line left-line-1">
+                <!-- 图标来自：https://icon.sucai999.com/ -->
+                <img src="./image/index/设置_1750409551.png" alt="">
+                <!-- <img src="./image/index/警告提示_1750409571.png" alt=""> -->
+                <a href="login.html"><img src="./image/login/返回箭头_1750785377.png" alt=""></a>
+                <img src="./image/index/邮件_1750409657.png" alt="">
+                <img src="./image/index/日历图标_1750409699.png" alt="">
+            </div>
+            <div class="left-line left-line-2"></div>
+            <div class="left-line left-line-3">
+                <img src="./image/index/Logo_罗德岛.png" alt="">
+                <div id="gray-void">
+                    <!-- 左边的灰色块 -->
+                    <span>120</span>
+                    <span>LV</span>
+                    <span class="user-name">WinXP</span>
+                    <!-- <span>ID:666666666</span> -->
+                    <!-- 图标来自：https://icon.sucai999.com/ -->
+                    <div id="visual-hiding-box"><img id="visual-hiding" src="./image/index/视觉隐藏图标_1750466450.png" alt="隐藏" onclick="panelHidden()"></div>
+                    <div id="circular-arrow-box"><img id="circular-arrow" src="./image/index/循环箭头_1750467194.png" alt=""></div>
+                    <div id="white-straight-line"></div>
+                </div>
+            </div>
+            <div class="left-line left-line-4">
+                <!-- <span class="">&nbsp;&nbsp;</span>，您还有许多事情需要处理。现在还不能休息哦。 -->
+            </div>
+            <div class="left-line left-line-5 row">
+                <div class="col-md-7 swiper my-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" id="my-swiper-slide-1"></div>
+                        <div class="swiper-slide" id="my-swiper-slide-2"></div>
+                        <div class="swiper-slide" id="my-swiper-slide-3"></div>
+                        <div class="swiper-slide" id="my-swiper-slide-4"></div>
+                        <div class="swiper-slide" id="my-swiper-slide-5"></div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+                <div class="col-md-5">
+                    <div id="friend">
+                        <span>好友</span>
+                        <img src="./image/index/用户与好友_1750489665.png" alt="">
+                    </div>
+                    <div id="files">
+                        <span>档案</span>
+                        <img src="./image/index/档案盒_1750490025.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6 right-panel">
+            <div class="right-line right-line-1">
+                <div id="white-straight-line-1"></div>
+                <div id="white-straight-line-2"></div>
+                <div id="current-time">
+                    TIME:&nbsp;
+                    <span id="year">&nbsp;&nbsp;&nbsp;&nbsp;</span>/<span id="month">&nbsp;&nbsp;</span>/<span id="day">&nbsp;&nbsp;</span>&nbsp;<span id="hour">&nbsp;&nbsp;</span>:<span id="minute">&nbsp;&nbsp;</span>
+                </div>
+                <div class="row" id="money">
+                    <div class="col-md-4" id="blue-money">
+                        <span>99999</span>
+                        <img src="./image/index/钱包_1750482856.png" alt="">
+                    </div>
+                    <div class="col-md-4" id="red-money">
+                        <span>325325</span>
+                        <div class="add-text">+</div>
+                        <img src="./image/index/美元硬币_1750482932.png" alt="">
+                    </div>
+                    <div class="col-md-4" id="yellow-money">
+                        <span>555</span>
+                        <div class="add-text" id="add-text-2">+</div>
+                        <img src="./image/index/绿宝石_1750482962.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="right-line right-line-2 row"  onclick="linkToTodoPlan()">
+                <div class="col-md-4" id="san">
+                    <div>
+                        <span>13</span>
+                        <img id="san-icon" src="./image/index/理智图标.png" alt="">
+                        <img id="add-icon" src="./image/index/加号圆圈_1750471647.png" alt="">
+                    </div>
+                    <div>理智/180</div>
+                </div>
+                <div class="col-md-3" id="terminal">
+                    <div id="text-1">终端</div>
+                    <div id="text-2">当前</div>
+                    <div id="text-3">全部完成</div>
+                </div>
+                <div class="col-md-5" id="activity"></div>
+            </div>
+            <div class="right-line right-line-3 row">
+                <div class="col-md-5" id="formation">
+                    <span>编队</span>
+                    <img src="./image/index/棋王_1750471038.png" alt="">
+                </div>
+                <div class="col-md-5" id="staff">
+                    <span>干员</span>
+                    <img src="./image/index/棋王_1750471092.png" alt="">
+                </div>
+                <div class="col-md-2" id="black-void"></div>
+            </div>
+            <div class="right-line right-line-4 row">
+                <div class="col-md-4" id="shopping-center">
+                    <span>采购中心</span>
+                    <img src="./image/index/超市购物车_1750475766.png" alt="">
+                </div>
+                <div class="col-md-8" id="offering">
+                    <div id="offering-text">招募</div>
+                    <div id="offering-content">
+                        <div id="public-offering">
+                            <span>公开招募</span>
+                            <img src="./image/index/添加用户_1750475879.png" alt="">
+                        </div>
+                        <div id="staff-search">
+                            <span>干员寻访</span>
+                            <img src="./image/index/添加用户_1750475879.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-line right-line-5 row">
+                <div class="col-md-5" id="task" onclick="linkToTodoList()">
+                    <div>
+                        <!-- <span>*</span> -->
+                        <img src="./image/index/六边形切片_1750471819.png" alt="" id="sixicon">
+                    </div>
+                    <span>任务</span>
+                    <img src="./image/index/任务管理_1750471148.png" alt="">
+                </div>
+                <div class="col-md-5" id="infrastructure">
+                    <span>基建</span>
+                    <img src="./image/index/笑脸表情_1750481252.png" alt="">
+                </div>
+                <div class="col-md-2" id="warehouse">
+                    <span>仓库</span>
+                    <img src="./image/index/仓库_1750482239.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./lib/jquery-3.6.1.min.js"></script>
+    <script src="./lib/swiper-11.0.3/js/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        var swiper = new Swiper(".my-swiper", {
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

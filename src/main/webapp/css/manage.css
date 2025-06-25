@@ -1,0 +1,40 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.userDialog,.todoDialog{
+    background-color: #fff;
+    width: 500px;
+    position: fixed;
+    top: 100px;
+    right: 500px;
+    border: solid 1px rgb(55, 55, 55);
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+    padding: 30px 30px 15px 30px;
+}
+.userDialog{
+    visibility: hidden;
+}
+
+.todoDialog {
+    visibility: hidden;
+}
+
+.layui-layout-admin .layui-card-body{
+    height: 500px;
+}
+
+#navigation {
+    position: fixed;
+    left: 200px; /* 与侧边栏宽度一致 */
+    bottom: 30px;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    /* 可根据需要调整背景色 */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+    /* 可选，增加阴影 */
+
+}

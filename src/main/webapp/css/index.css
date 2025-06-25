@@ -1,0 +1,771 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 使用户鼠标不会在靠近按钮文字时变成输入状态 */
+    user-select: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/bg/场景_视野.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* 多出直接隐藏，避免出现滚动条 */
+    overflow: hidden;
+}
+
+#favorite-staff-box{
+    width: 0;
+    height: 0;
+    position: relative;
+}
+#favorite-staff{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1024px;
+    height: 1024px;
+}
+#unhide{
+    width: 195px;
+    height: 50px;
+    position: absolute;
+    top: 13px;
+    left: 30px;
+    background-color: #404040;
+    visibility: hidden;
+}
+#unhide>div{
+    height: 30px;
+    width: 30px;
+    border-top: #fff solid 2px;
+    border-left: #fff solid 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+.outermost-panel {
+    /* 占满整个屏幕 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.my-hidden{
+    visibility: hidden;
+}
+/* 透明度设置 */
+.left-panel,
+.right-panel {
+    opacity: 0.8;
+}
+
+.left-panel {
+    height: 100%;
+    /* background-color: pink; */
+    position: relative;
+    left: 40px;
+}
+
+.right-panel {
+    height: 100%;
+    /* background-color: skyblue; */
+    position: relative;
+    left: 40px;
+}
+
+.right-line,
+.left-line {
+    /* border: solid 1px black; */
+    padding: 10px;
+    /* 默认每行使用flex布局，不换行 */
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.right-line{
+    margin: 0;
+}
+
+/* 经过粗略估计，明日方舟左侧子面板高度比为：2:4:4:2:3 总：15*/
+/* 1.每行高度设置 */
+.left-line-1,
+.left-line-4 {
+    /* background-color: rgb(161, 70, 85); */
+    height: 12%;
+}
+
+.left-line-2 {
+    height: 18%;
+}
+
+.left-line-3 {
+    /* background-color: rgb(222, 51, 82); */
+    height: 26%;
+}
+
+.left-line-5 {
+    /* background-color: rgb(116, 38, 51); */
+    height: 20%;
+}
+
+/* 2.每行旋转粗糙仿制引导线 */
+.left-line-4 {
+    transform: skewY(-2.7deg);
+}
+
+.left-line-5 {
+    transform: skewY(-3deg);
+}
+
+/* left-line-1 */
+.left-line-1>img,
+.left-line-1>a>img{
+    width: 40px;
+    height: 40px;
+
+    margin-right: 20px;
+}
+.left-line-1>img:first-child{
+    width: 35px;
+    height: 35px;
+
+    margin-left: -20px;
+    position: relative;
+    top: 3px;
+}
+
+/* left-line-3 */
+.left-line-3 {
+    position: relative;
+}
+
+.left-line-3>img {
+    /* 使灰色块在罗德岛图标上 */
+    z-index: 0;
+    opacity: 0.7;
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    left: -115px;
+    bottom: -5px;
+}
+
+#gray-void {
+    /* 使灰色块在罗德岛图标上 */
+    z-index: 1;
+    background-color: #202020;
+    height: 35px;
+    width: 150px;
+    position: absolute;
+    left: -60px;
+    top: 70px;
+}
+#gray-void>span{
+    color: #fff;
+}
+#gray-void>span:nth-child(1){
+    opacity: 1;
+
+    font-size: 48px;
+    height: 100px;
+    width: 100px;
+    border: solid 3px rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    /* 文字居中 */
+    text-align: center;
+    line-height: 100px;
+
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+}
+#gray-void>span:nth-child(2) {
+    opacity: 1;
+
+    font-size: 18px;
+
+    /* 文字居中 */
+    text-align: center;
+    line-height: 18px;
+
+    display: block;
+    position: absolute;
+    right: 38px;
+    bottom: 14px;
+}
+#gray-void>span:nth-child(3) {
+    opacity: 1;
+    width: 100px;
+    font-size: 27px;
+
+    /* 文字居中 */
+    text-align: center;
+    line-height: 27px;
+
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: -45px;
+}
+/* ID不显示了 */
+/* #gray-void>span:nth-child(4) {
+    opacity: 0.8;
+
+    font-size: 16px;
+    color: black;
+
+    text-align: center;
+    line-height: 16px;
+
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: -62px;
+} */
+#visual-hiding-box,#circular-arrow-box{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #202020;
+    border: solid 2px rgba(255, 255, 255, 0.3);
+
+    position: absolute;
+    right: -110px;
+    bottom: -48px;
+}
+#circular-arrow-box{
+    right: -160px;
+    bottom: -48px;
+}
+#visual-hiding,#circular-arrow{
+    width: 23px;
+    height: 23px;
+}
+#circular-arrow{
+    transform: rotate(90deg);
+}
+#white-straight-line{
+    width: 50px;
+    border-top: solid #fff 1px;
+    position: absolute;
+    right: -210px;
+    bottom: -31px;
+    filter:blur(0.5px);
+}
+
+
+/* left-line-4 */
+.left-line-4 {
+    /* margin-bottom: 1px; */
+    background-color: rgb(18, 18, 18);
+    width: 98%;
+    position: relative;
+    right: 5px;
+
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+
+    animation: changeBg 20s linear 0s infinite alternate;
+}
+
+/* left-line-5 */
+.my-swiper {
+    background-color: #881144;
+}
+#my-swiper-slide-1,
+#my-swiper-slide-2,
+#my-swiper-slide-3,
+#my-swiper-slide-4,
+#my-swiper-slide-5{
+    background: url(../image/index/mujica-1.jpg) no-repeat;
+    background-size: cover;
+}
+#my-swiper-slide-2{
+    background-image: url(../image/index/mujica-2.jpg);
+}
+#my-swiper-slide-3{
+    background-image: url(../image/index/mujica-3.jpg);
+}
+#my-swiper-slide-4{
+    background-image: url(../image/index/mujica-4.jpg);
+}
+#my-swiper-slide-5{
+    background-image: url(../image/index/mujica-5.jpg);
+}
+
+#friend,
+#files {
+    height: 50%;
+    position: relative;
+}
+
+#friend>span,
+#files>span{
+    font-size: 25px;
+    font-family: "宋体";
+    font-weight: 1000;
+    display: block;
+    text-align: right;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+    top:10px;
+
+}
+#friend>img,
+#files>img{
+    position: absolute;
+    width: 50px;
+    left: 10px;
+    top: 10px;
+}
+
+#friend {
+    background-color: #404040;
+    margin-bottom: 2px;
+}
+#friend>span{
+    color: white;
+}
+
+#files {
+    background-color: #fff;
+    margin-top: 2px;
+}
+
+/* 经过粗略估计，明日方舟右侧子面板高度比为：2:3:2:2:2 总：11*/
+/* 1.每行高度设置 */
+/* 2.每行旋转粗糙仿制引导线 */
+.right-line-1{
+    height: 10%;
+    transform: skewY(-3deg);
+}
+.right-line-2 {
+    /* background-color: #18527b; */
+    height: 25%;
+    transform: skewY(-2.5deg);
+    clip-path: polygon(100% 0, 100% 100%, 0% 93%, 0 6%)
+}
+.right-line-3,
+.right-line-4,
+.right-line-5 {
+    /* background-color: rgb(70, 151, 182); */
+    height: 17%;
+    transform: skewY(-1deg);
+    /* clip-path: polygon(100% 0, 100% 100%, 0% 93%, 0 6%) */
+}
+.right-line-4{
+    transform: skewY(1deg);
+    /* clip-path: polygon(100% 0, 100% 100%, 0% 93%, 0 6%) */
+}
+.right-line-5{
+    transform: skewY(2.5deg);
+    /* clip-path: polygon(100% 0, 100% 100%, 0% 93%, 0 6%) */
+}
+
+/* right-line-1 */
+.right-line-1 {
+    display: block;
+    position: relative;
+}
+#current-time{
+    color: white;
+    padding-left: 100px;
+    text-align: left;
+    text-shadow: rgb(32, 32, 32, 0.5) 3px 3px 0px;
+}
+#white-straight-line-1,#white-straight-line-2{
+    position: absolute;
+    border-top: #fff solid 2px;
+    top: 20px;
+}
+#white-straight-line-1{
+    width: 60px;
+    left: 40px;
+}
+#white-straight-line-2{
+    width: 500px;
+    left: 280px;
+}
+
+#money {
+    display: flex;
+}
+#blue-money,
+#red-money,
+#yellow-money{
+    background-color: rgba(192, 192, 192, 0.3);
+    position: relative;
+    padding-left: 80px;
+    padding-top:5px;
+}
+#blue-money>span,
+#red-money>span,
+#yellow-money>span {
+    font-size: 25px;
+    text-align: left;
+    height: 50%;
+    width: 100%;
+}
+.add-text{
+    display: inline-block;
+    background-color: white;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    font-size: 25px;
+    text-align: center;
+    line-height: 30px;
+
+    position: absolute;
+    right: 40px;
+}
+#add-text-2{
+    right: 80px;
+}
+
+#blue-money>img,
+#red-money>img,
+#yellow-money>img{
+    height: 100%;
+    position: absolute;
+    left: 35px;
+    bottom: 3px;
+}
+
+/* right-line-2 */
+.right-line-2 {
+    background-color: white;
+    margin: 10px;
+    position: relative;
+    left: 30px;
+}
+#san {
+    background-color: #a0a0a0;
+    margin: 15px;
+    padding: 0;
+}
+#san>div:nth-child(1){
+    height: 70%;
+    background-color: #a0a0a0;
+    text-shadow: rgba(91, 91, 91, 0.2) 5px 5px 4px;
+}
+#san>div:nth-child(1)>span {
+    font-size: 90px;
+    line-height: 90px;
+    position: absolute;
+    right: 10px;
+    /* 使文字在图片之上 */
+    z-index: 1;
+}
+#add-icon{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -20px;
+    top: 28px;
+}
+#san-icon{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    opacity: inherit;
+    /* 使文字在图片之上 */
+    z-index: 0;
+}
+#san>div:nth-child(2) {
+    height: 30%;
+    border-top: solid 7px white;
+    background-color: #4d4d4d;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 20px;
+}
+#terminal{
+    flex-wrap: wrap;
+    padding: 0;
+    padding-top: 10px;
+
+}
+#text-1{
+    font-size: 60px;
+    font-family: "宋体";
+    font-weight: 1000;
+    padding-left: 5px;
+}
+#text-2,#text-3{
+    font-size: 16px;
+    padding-left: 10px;
+}
+#text-2{
+    color: white;
+    background-color: #4d4d4d;
+    width: 55px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#activity {
+    background: url(../image/index/sakiko.jpg) no-repeat;
+    background-size: cover;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* right-line-3 */
+.right-line-3 {
+    position: relative;
+    left: 30px;
+}
+#formation,
+#staff {
+    background-color: #fff;
+    margin-right: 10px;
+    position: relative;
+}
+#formation>img,#staff>img{
+    height: 105px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+#staff>img{
+    padding: 10px;
+}
+#formation>span,
+#staff>span{
+    font-size: 40px;
+    font-family: "宋体";
+    font-weight: 1000;
+    display: block;
+    margin-top: 10px;
+}
+
+#black-void {
+    background-color: rgb(18, 18, 18);
+}
+
+/* right-line-4 */
+.right-line-4 {
+    margin-left: 80px;
+}
+#shopping-center,
+#offering {
+    background-color: #2498c5;
+    position: relative;
+    padding: 0;
+}
+#shopping-center{
+    border-right: solid #4d4d4d 2px;
+}
+#shopping-center>span{
+    font-size: 40px;
+    font-family: "宋体";
+    font-weight: 1000;
+    width: 100%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    /* 文字在图片之上 */
+    z-index: 1;
+}
+#shopping-center>img{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    /* 文字在图片之上 */
+    z-index: 0;
+}
+#offering-text {
+    height: 33%;
+    background-color: #404040;
+    border: #2498c5 solid 2px;
+}
+#offering-content {
+    display: flex;
+    padding: 5px;
+    height: 100%;
+}
+#public-offering,
+#staff-search {
+    height: 66%;
+    width: 50%;
+    position: relative;
+    border-bottom: solid 1px rgb(99, 140, 156,0.5);
+    border-left: solid 1px rgb(99, 140, 156, 0.5);
+    border-right: solid 1px rgb(99, 140, 156, 0.5);
+}
+#staff-search{
+    border-left: solid #4d4d4d 2px;
+    margin-left: 5px;
+}
+#public-offering>span,
+#staff-search>span{
+    font-size: 30px;
+    font-family: "宋体";
+    font-weight: 1000;
+    position: absolute;
+    left: calc(50% - 60px);
+    bottom: calc(50% - 20px);
+    color: white;
+    /* 文字在图片之上 */
+    z-index: 1;
+}#public-offering>img,
+#staff-search>img {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* 文字在图片之上 */
+    z-index: 0;
+}
+
+/* right-line-5 */
+.right-line-5 {
+    margin-left: 50px;
+    margin-right: 30px;
+}
+#sixicon{
+    animation: changeBg2 0.5s linear 0s infinite alternate;
+}
+#task,
+#infrastructure {
+    background-color: #fff;
+    margin-right: 10px;
+}
+#task>div{
+    width: 100%;
+    border-top: solid 5px orangered;
+    position: relative;
+    bottom: 2px;
+}
+#task>div>span{
+    width: 2em;
+    text-align: center;
+    color: white;
+    position: absolute;
+    right: -11px;
+    top: -3px;
+    /* 文字在图片之上 */
+    z-index: 1;
+}
+#task>div>img{
+    width: 50px;
+    position: absolute;
+    right: -23px;
+    top:-19px;
+    /* 文字在图片之上 */
+    z-index: 0;
+}
+#task>span,
+#infrastructure>span{
+    font-size: 40px;
+    font-family: "宋体";
+    font-weight: 1000;
+    display: block;
+    margin-top: 10px;
+}
+#task>img,
+#infrastructure>img {
+    height: 90px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+#infrastructure>img {
+    height: 90px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+#warehouse {
+    margin-left: -15px;
+    background-color: #404040;
+    position: relative;
+}
+#warehouse>span{
+    display: block;
+    width: 100%;
+    font-size: 30px;
+    font-family: "宋体";
+    font-weight: 1000;
+    text-align: center;
+    color: white;
+    display: block;
+    margin-top: 10px;
+    /* opacity: 1; */
+}
+#warehouse>img{
+    height: 50px;
+    position: absolute;
+    right: 18px;
+    bottom: 10px
+}
+
+/* 每个单独的块加上盒子阴影 */
+#unhide,
+#gray-void,
+#visual-hiding-box,
+#circular-arrow-box,
+.left-line-4,
+#my-swiper,
+#friend,
+#files,
+#money,
+.right-line-2,
+#activity,
+#formation,
+#staff,
+.right-line-4,
+#task,
+#infrastructure,
+#warehouse {
+    box-shadow: rgba(91, 91, 91, 0.2) -5px 5px 4px;
+}
+
+/* 对话框消失出现动画 */
+@keyframes changeBg {
+    0% {
+        opacity: 1;
+    }
+    5%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    95%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes changeBg2 {
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}

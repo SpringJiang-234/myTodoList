@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/bg/壁纸.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* 多出直接隐藏，避免出现滚动条 */
+    overflow: hidden;
+}
+
+/* 上下两个遮罩层 */
+header,footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(64, 64, 64, 0.8);
+    position: fixed;
+}
+footer{
+    bottom: 0;
+}
+
+/* 明日方舟logo */
+#logo{
+    width: 700px;
+    position: fixed;
+    right: calc(750px - 350px);
+    top:100px;
+}
+
+/* 登录按钮 */
+#login-button,#register-button{
+    /* 使用户鼠标不会在靠近按钮文字时变成输入状态 */
+    user-select: none;
+
+    width: 200px;
+    height: 70px;
+    background-color: rgba(64, 64, 64,0.8);
+    position: fixed;
+    right: calc(750px - 100px);
+    bottom: 200px;
+
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 1000;
+    color: rgba(255, 255, 255,0.9);
+    text-align: center;
+    line-height: 70px;
+
+    border: solid 1px white;
+
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+}
+#register-button{
+    bottom: 145px;
+    font-size: 16px;
+
+    border: none;
+    background: none;
+    box-shadow: none;
+
+    color: rgb(0, 0, 0);
+    text-shadow: rgb(0, 0, 0) 0px 5px 4px;
+    text-decoration: underline;
+
+    /* color: black; */
+
+}
+
+/* 弹窗输入框 */
+#dialog-input{
+    width: 500px;
+    height: 300px;
+    /* border-radius: 15px; */
+    position: fixed;
+    right: calc(750px - 250px);
+    bottom: 200px;
+    overflow: hidden;
+
+    visibility: hidden;
+    /* background-color: pink; */
+
+    border: solid 1px white;
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+
+}
+
+/* 输入框header和footer */
+.top,.bottom{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(64, 64, 64,0.95);
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 2px 2px;
+
+    position: absolute;
+
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    line-height: 60px;
+}
+.top{
+    top:0;
+}
+
+.bottom{
+    width: 400px;
+    margin: 20px 50px;
+    bottom: 0;
+    /* border-radius: 15px; */
+
+    border: solid 1px white;
+
+    /* 使用户鼠标不会在靠近按钮文字时变成输入状态 */
+    user-select: none;
+
+}
+
+/* 登录输入框的中间部分，有两个input */
+.middle{
+    background-color: rgba(255, 255, 255,0.95);
+    margin-top: 60px;
+    height: 240px;
+    padding: 40px 70px;
+
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 1000;
+}
+.middle>div{
+    height: 60px;
+    position: relative;
+}
+input{
+    background-color: rgba(255, 255, 255,0);
+    border: none;
+    outline: none;
+    width: 270px;
+    height: 26px;
+    line-height: 26px;
+    border-bottom: rgba(64, 64, 64,0.8) 1px solid;
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    box-shadow: rgba(232, 232, 232, 0.8) 0px 2px 2px;
+}
+
+/* 输入框和输入框的提示信息字的css是一样的 */
+input,input::placeholder{
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 500;
+}
+
+.middle span{
+    /* 黑字白阴影 */
+    /* text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 0px; */
+}
+
+#hidden-button{
+    position: absolute;
+    height: 30px;
+    top: 15px;
+    left: 15px;
+    z-index: 99;
+}

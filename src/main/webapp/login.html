@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <img id="logo" src="./image/login/明日方舟_罗德岛.png" alt="">
+        <div id="login-button" onclick="panelUnhide(1)">登录</div>
+        <div id="register-button" onclick="panelUnhide(2)">点我注册</div>
+        <div id="dialog-input">
+            <img src="./image/login/返回箭头_1750785377.png" alt="" id="hidden-button" onclick="panelHidden()">
+            <div class="top" id="dialog-confirm-label"></div>
+            <div class="middle">
+                <div>
+                    <span>用户名</span>
+                    <input id="user" type="text" placeholder="请输入用户名">
+                </div>
+                <div>
+                    <span>密码</span>
+                    <input id="pwd" type="password" placeholder="请输入密码">
+                </div>
+            </div>
+            <div class="bottom" id="dialog-confirm-button" onclick="confirm()"></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./lib/jquery-3.6.1.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>
