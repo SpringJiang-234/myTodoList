@@ -116,7 +116,7 @@ function setClassify() {
         success: function (res) {
             console.log('请求成功 res = ', res)
             allClassify = res.classify;
-            var classifyHtml = '';
+            var classifyHtml = '<div class="reward-item">全部Ciallo～(∠・ω< )⌒★</div>';
             allClassify.forEach((item, index) => {
                 classifyHtml += `<div class="reward-item">${item}Ciallo～(∠・ω< )⌒★</div>`;
             });
