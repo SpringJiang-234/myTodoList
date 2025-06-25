@@ -10,6 +10,10 @@ var allTodoList = null;
 
 getList();
 
+var allClassify = null;
+setClassify();
+
+
 // 2.点击返回，回到index
 function linkToIndex() {
     location.href = "index.html?user=" + allUserName;
@@ -98,5 +102,28 @@ function updateIscomplete(index) {
 //提示框
 function dialogTip() {
     alert('啊哈哈还没做')
-    
 } 
+
+function setClassify() {
+    //请求得到用户的分类，渲染到页面
+    $.ajax({
+        url: 'todo/getclassify',
+        type: "POST",
+        dataType: "json",
+        data: {
+            'user': allUserName,
+        },
+        success: function (res) {
+            console.log('请求成功 res = ', res)
+            allClassify = res.classify;
+            var classifyHtml = '';
+            allClassify.forEach((item, index) => {
+                classifyHtml += `<div class="reward-item">${item}Ciallo～(∠・ω< )⌒★</div>`;
+            });
+            $('.reward').html(classifyHtml)
+        },
+        error: function (err) {
+            console.log('请求失败 err = ', err)
+        }
+    });
+}
