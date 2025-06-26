@@ -70,9 +70,9 @@ function getList() {
                 tbodyHtml +=
                     `<div class="todo-item">
                         <div class="todo-item-complete-button" onclick="updateIscomplete(${index})">
-                            <img src="./image/todo/国际象棋车_1750826775.png" alt="">
+                            <img src="./image/todo/棋子_${item.tag}.png" alt="">
                             <span class="span0">${item.iscomplete == 1 ? '0' : '1'}</span><span class="span1">/1</span>
-                            <div ${item.iscomplete == 2 ? 'style="background-color:#3271c3"' : ''}></div>
+                            <div ${item.iscomplete == 2 ? 'style="background-color:white"' : ''}></div>
                         </div>
                         <div class="icon-delete"  onclick="todoDel('${item.id}')">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
