@@ -151,8 +151,7 @@ function reset() {
 } 
 
 //请求得到用户的分类，渲染到页面
-function setClassify() {
-    
+function setClassify() {  
     $.ajax({
         url: 'todo/getclassify',
         type: "POST",
@@ -163,7 +162,13 @@ function setClassify() {
         success: function (res) {
             console.log('请求成功 res = ', res)
             allClassifyList = res.classify;
-            var classifyHtml = '<div class="reward-item" onclick="tabClassify()">全部Ciallo～(∠・ω< )⌒★</div>';
+            classifyHtml = `<div>
+                <img src="./image/todo/棋子_RED.png" alt="" style="width: 30px;">重要且紧急
+                <img src="./image/todo/棋子_YELLOW.png" alt="" style="width: 30px;">重要不紧急
+                <img src="./image/todo/棋子_BLUE.png" alt="" style="width: 30px;">不重要但紧急
+                <img src="./image/todo/棋子_DEFAULT.png" alt="" style="width: 30px;">不重要不紧急
+            </div>`;
+            classifyHtml += '<div class="reward-item" onclick="tabClassify()">全部Ciallo～(∠・ω< )⌒★</div>';
             allClassifyList.forEach((item, index) => {
                 classifyHtml += `<div class="reward-item" onclick="tabClassify('${item}')">${item}Ciallo～(∠・ω< )⌒★</div>`;
             });
