@@ -135,31 +135,60 @@ public class TodoDaoImpl implements ITodoDao {
     public List<Todo> todoGetList2(String idLike, String user, String titleLike, String contentLike, Tag tagLike, String classifyLike, String istopLike, IsCircle iscircleLike,String iscomplete, int offset, int pageSize) {
         List<Todo> todoList = new ArrayList<>();
         Todo todo = null;
+        String sql;
+        boolean flag=(classifyLike==null||classifyLike.equals(""));
+        if(flag){
+             sql = "SELECT * FROM `todo` WHERE "
+                    +"`id` LIKE concat('%',?,'%') AND "
+                    +"`user` LIKE ? AND "
+                    +"`title` LIKE concat('%',?,'%') AND "
+                    +"`content` LIKE concat('%',?,'%') AND "
+                    +"`tag` LIKE concat('%',?,'%') AND "
+                    +"`istop` LIKE concat('%',?,'%') AND "
+                    +"`iscircle` LIKE concat('%',?,'%') AND"
+                    +"`iscomplete` LIKE concat('%',?,'%')"
+                    +" LIMIT ?,?";
+        }else{
+            sql = "SELECT * FROM `todo` WHERE "
+                    +"`id` LIKE concat('%',?,'%') AND "
+                    +"`user` LIKE ? AND "
+                    +"`title` LIKE concat('%',?,'%') AND "
+                    +"`content` LIKE concat('%',?,'%') AND "
+                    +"`tag` LIKE concat('%',?,'%') AND "
+                    +"`classify` LIKE ? AND "
+                    +"`istop` LIKE concat('%',?,'%') AND "
+                    +"`iscircle` LIKE concat('%',?,'%') AND"
+                    +"`iscomplete` LIKE concat('%',?,'%')"
+                    +" LIMIT ?,?";
+        }
 
-        String sql = "SELECT * FROM `todo` WHERE "
-                +"`id` LIKE concat('%',?,'%') AND "
-                +"`user` LIKE ? AND "
-                +"`title` LIKE concat('%',?,'%') AND "
-                +"`content` LIKE concat('%',?,'%') AND "
-                +"`tag` LIKE concat('%',?,'%') AND "
-                +"`classify` LIKE concat('%',?,'%') AND "
-                +"`istop` LIKE concat('%',?,'%') AND "
-                +"`iscircle` LIKE concat('%',?,'%') AND"
-                +"`iscomplete` LIKE concat('%',?,'%')"
-                +" LIMIT ?,?";
         try {
-            pstm = conn.prepareStatement(sql);
-            pstm.setString(1,idLike);
-            pstm.setString(2,user);
-            pstm.setString(3,titleLike);
-            pstm.setString(4,contentLike);
-            pstm.setString(5,Tag.toDbValue(tagLike));
-            pstm.setString(6,classifyLike);
-            pstm.setString(7,istopLike);
-            pstm.setString(8,IsCircle.toDbValue(iscircleLike));
-            pstm.setString(9,iscomplete);
-            pstm.setInt(10,offset);
-            pstm.setInt(11,pageSize);
+            if(flag){
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1,idLike);
+                pstm.setString(2,user);
+                pstm.setString(3,titleLike);
+                pstm.setString(4,contentLike);
+                pstm.setString(5,Tag.toDbValue(tagLike));
+                pstm.setString(6,istopLike);
+                pstm.setString(7,IsCircle.toDbValue(iscircleLike));
+                pstm.setString(8,iscomplete);
+                pstm.setInt(9,offset);
+                pstm.setInt(10,pageSize);
+            }else{
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1,idLike);
+                pstm.setString(2,user);
+                pstm.setString(3,titleLike);
+                pstm.setString(4,contentLike);
+                pstm.setString(5,Tag.toDbValue(tagLike));
+                pstm.setString(6,classifyLike);
+                pstm.setString(7,istopLike);
+                pstm.setString(8,IsCircle.toDbValue(iscircleLike));
+                pstm.setString(9,iscomplete);
+                pstm.setInt(10,offset);
+                pstm.setInt(11,pageSize);
+            }
             System.out.println("爱来自TodoDao，您GetList2的sql语句长这样：\n"+sql);
             rs = pstm.executeQuery();
             while (rs.next()){

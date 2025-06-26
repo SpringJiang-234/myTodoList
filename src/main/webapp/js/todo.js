@@ -32,9 +32,13 @@ function tabActive(element,iscircle) {
 
 // 3.分类点击后分类全局变量allClassify变化
 function tabClassify(classify) {
+    if (classify == null) {
+        classify = "";
+    }
     allClassify = classify;
 
     setClassify();
+    console.log(allClassify)
     getList();
 }
 
@@ -133,7 +137,7 @@ function setClassify() {
         success: function (res) {
             console.log('请求成功 res = ', res)
             allClassifyList = res.classify;
-            var classifyHtml = '<div class="reward-item">全部Ciallo～(∠・ω< )⌒★</div>';
+            var classifyHtml = '<div class="reward-item" onclick="tabClassify()">全部Ciallo～(∠・ω< )⌒★</div>';
             allClassifyList.forEach((item, index) => {
                 classifyHtml += `<div class="reward-item" onclick="tabClassify('${item}')">${item}Ciallo～(∠・ω< )⌒★</div>`;
             });
