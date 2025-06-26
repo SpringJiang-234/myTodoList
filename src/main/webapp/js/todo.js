@@ -5,7 +5,7 @@ var allUserName = urlParams.get('user');
 console.log(allUserName);
 
 // 全局变量
-var allIscircle = 'day';
+var allIscircle = 'default';
 var allClassify = '';
 var allTodoList = null;
 

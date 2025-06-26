@@ -37,17 +37,17 @@
         <div class="right-header">
             <!-- 小提示 -->
             <div class="tip" onclick="dialogTip()"><img src="./image/todo/信息提示_1750814818.png" alt=""></div>
+            <!-- 支线任务 -->
+            <div class="tab tab-active" onclick="tabActive(this,'default')">
+                <span>支线任务</span>
+            </div>
             <!-- 日常任务 -->
-            <div class="tab tab-active" onclick="tabActive(this,'day')">
+            <div class="tab" onclick="tabActive(this,'day')">
                 <span>日常任务</span>
             </div>
             <!-- 周常任务 -->
             <div class="tab" onclick="tabActive(this,'week')">
                 <span>周常任务</span>
-            </div>
-            <!-- 支线任务 -->
-            <div class="tab" onclick="tabActive(this,'default')">
-                <span>支线任务</span>
             </div>
         </div>
         <div class="right-main" id="todo-list">
