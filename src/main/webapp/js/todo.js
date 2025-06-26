@@ -7,6 +7,9 @@ console.log(allUserName);
 // 全局变量
 var allIscircle = 'default';
 var allClassify = '';
+var allIstop = '';
+var allIscomplete = '';
+
 var allTodoList = null;
 
 getList();
@@ -58,9 +61,9 @@ function getList() {
             'contentLike': '',
             'tagLike': '',
             'classifyLike': allClassify,
-            'istopLike': '',
+            'istopLike': allIstop,
             'iscircleLike': allIscircle,
-            'iscomplete': ''
+            'iscomplete': allIscomplete,
         },
         success: function (res) {
             console.log('请求成功 res = ', res)
@@ -120,9 +123,18 @@ function updateIscomplete(index) {
     });
 }
 
-//提示框
-function dialogTip() {
-    alert('啊哈哈还没做')
+//全部重置
+function reset() {
+    allClassify = '';
+    allIstop = '';
+    allIscomplete = '';
+
+    allTodoList = null;
+
+    getList();
+
+    allClassifyList = null;
+    setClassify();
 } 
 
 function setClassify() {
