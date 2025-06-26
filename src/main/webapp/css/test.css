@@ -41,16 +41,61 @@ body {
 } */
 
 .todoDialog {
-    background-color: #fff;
     width: 500px;
+    height: 400px;
+
+    /* 固定在正中间 */
     position: fixed;
-    top: 100px;
-    right: 500px;
-    border: solid 1px rgb(55, 55, 55);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    background-color: rgba(64, 64, 64, 0.95);
+    
+    font-size: 20px;
+    font-family: "宋体";
+    /* font-weight: 300; */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+
+    border: solid 1px white;    
     box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
     padding: 30px 30px 15px 30px;
 }
 
+.todoDialog input,.todoDialog input::placeholder{
+    background-color: rgba(64, 64, 64, 0.95);
+
+    font-size: 18px;
+    font-family: "宋体";
+    /* font-weight: 300; */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    /* outline: none; */
+    border:none;
+}
+
+.todoDialog input {
+    background-color: rgba(64, 64, 64, 0.95);
+    /* outline: none; */
+}
+
+.todoDialog .form-group div button {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    /* 移除焦点时的轮廓 */
+    background-color: rgba(64, 64, 64, 0.95);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 鼠标悬停和焦点状态 */
+.todoDialog .form-group div button:hover,
+.todoDialog .form-group div button:focus {
+    background-color: rgba(80, 80, 80, 0.95);
+}
 
 .todoDialog {
     visibility: visible;
