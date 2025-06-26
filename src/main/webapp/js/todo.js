@@ -6,11 +6,12 @@ console.log(allUserName);
 
 // 全局变量
 var allIscircle = 'day';
+var allClassify = '';
 var allTodoList = null;
 
 getList();
 
-var allClassify = null;
+var allClassifyList = null;
 setClassify();
 
 
@@ -29,6 +30,14 @@ function tabActive(element,iscircle) {
     getList();
 }
 
+// 3.分类点击后分类全局变量allClassify变化
+function tabClassify(classify) {
+    allClassify = classify;
+
+    setClassify();
+    getList();
+}
+
 //请求数据
 function getList() {
     //请求数据
@@ -44,7 +53,7 @@ function getList() {
             'titleLike': '',
             'contentLike': '',
             'tagLike': '',
-            'classifyLike': '',
+            'classifyLike': allClassify,
             'istopLike': '',
             'iscircleLike': allIscircle,
             'iscomplete': ''
@@ -123,10 +132,10 @@ function setClassify() {
         },
         success: function (res) {
             console.log('请求成功 res = ', res)
-            allClassify = res.classify;
+            allClassifyList = res.classify;
             var classifyHtml = '<div class="reward-item">全部Ciallo～(∠・ω< )⌒★</div>';
-            allClassify.forEach((item, index) => {
-                classifyHtml += `<div class="reward-item">${item}Ciallo～(∠・ω< )⌒★</div>`;
+            allClassifyList.forEach((item, index) => {
+                classifyHtml += `<div class="reward-item" onclick="tabClassify('${item}')">${item}Ciallo～(∠・ω< )⌒★</div>`;
             });
             $('.reward').html(classifyHtml)
         },
