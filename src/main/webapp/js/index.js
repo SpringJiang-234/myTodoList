@@ -1,3 +1,6 @@
+//进入主页，随机看板娘
+changeCute();
+
 /* 0.从路径取用户名*/
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
@@ -25,7 +28,7 @@ function getCurrentTime() {
     $('#minute').text(minutes);
 }
 
-//每30s执行一次获取当前时间函数
+//每30s执行一次获取当前时间函数（可以更快）
 setInterval(getCurrentTime, 30000);
 
 // 2.取得用户名显示在left - line - 4以及left - line - 3
@@ -57,3 +60,13 @@ function linkToTodoPlan() {
 // function say() {
 //     $('.left-line-4').css('visibility', 'visible');
 // }
+
+//随机看板娘
+function changeCute() {
+    // 生成1-5的随机整数（包含1和5）
+    const randomNum = Math.floor(Math.random() * 5) + 1;
+    console.log(randomNum);
+    var s = "./image/cute/" + randomNum + ".png";
+    console.log(s)
+    $('#favorite-staff').attr('src', s);
+}
