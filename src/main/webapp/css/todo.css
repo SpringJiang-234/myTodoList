@@ -42,7 +42,12 @@ body {
     box-shadow: rgba(98, 98, 98, 0.63) 4px 6px 6px;
 }
 #home-button{
-    padding:15px 36px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:center
+}
+#home-button>span {
+    line-height: 50px;
 }
 
 #return-button {

@@ -45,6 +45,18 @@ function tabClassify(classify) {
     getList();
 }
 
+// 4.仅置顶
+function toptop() {
+    allIstop = '2'
+    getList();
+}
+
+// 5.仅未完成
+function completecomplete() {
+    allIscomplete = '1';
+    getList();
+}
+
 //请求数据
 function getList() {
     //请求数据
@@ -121,6 +133,7 @@ function updateIscomplete(index) {
             alert('更新失败')
         }
     });
+    getList();
 }
 
 //全部重置
