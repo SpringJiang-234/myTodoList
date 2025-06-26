@@ -1,0 +1,64 @@
+/*todo弹窗*/
+.updatepwd {
+    width: 500px;
+    height: 150px;
+
+    /* 固定在正中间 */
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    background-color: rgba(64, 64, 64, 0.95);
+
+    font-size: 20px;
+    font-family: "宋体";
+    /* font-weight: 300; */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+
+    border: solid 1px white;
+    box-shadow: rgba(91, 91, 91, 0.8) 0px 5px 4px;
+    padding: 30px 30px 15px 30px;
+}
+
+.updatepwd input {
+    background-color: rgba(64, 64, 64, 0.95);
+
+    font-size: 18px;
+    font-family: "宋体";
+    /* font-weight: 300; */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    /* outline: none; */
+    border: none;
+}
+
+.updatepwd input::placeholder {
+    background-color: rgba(64, 64, 64, 0.95);
+    font-family: "宋体";
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+
+.updatepwd input {
+    background-color: rgba(64, 64, 64, 0.95);
+    /* outline: none; */
+}
+
+.updatepwd .form-group div button {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    /* 移除焦点时的轮廓 */
+    background-color: rgba(64, 64, 64, 0.95);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 鼠标悬停和焦点状态 */
+.updatepwd .form-group div button:hover,
+.updatepwd .form-group div button:focus {
+    background-color: rgba(80, 80, 80, 0.95);
+}

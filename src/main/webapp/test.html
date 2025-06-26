@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/test.css">
 </head>
 <body>
-    
+    <div class="updatepwd">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="todo-dialog-newpwd" class="col-sm-3 control-label">新密码</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="todo-dialog-newpwd" placeholder="请输入新密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="button" class="btn btn-default btn-newpwd" onclick="newpwdConfirm()">确认</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/test.js"></script>
 </body>
 </html>
