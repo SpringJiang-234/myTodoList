@@ -41,6 +41,9 @@ body {
 
     box-shadow: rgba(98, 98, 98, 0.63) 4px 6px 6px;
 }
+#home-button{
+    padding:15px 110px;
+}
 
 #return-button {
     width: calc(100% - 45px - 270px);
