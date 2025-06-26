@@ -150,8 +150,9 @@ function reset() {
     setClassify();
 } 
 
+//请求得到用户的分类，渲染到页面
 function setClassify() {
-    //请求得到用户的分类，渲染到页面
+    
     $.ajax({
         url: 'todo/getclassify',
         type: "POST",
