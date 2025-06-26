@@ -22,7 +22,7 @@
         <div class="col-md-4 left-panel">
             <div class="left-line left-line-1">
                 <!-- 图标来自：https://icon.sucai999.com/ -->
-                <img src="./image/index/设置_1750409551.png" alt="">
+                <img src="./image/index/设置_1750409551.png" alt="" onclick="pwdUpdateDialog()">
                 <!-- <img src="./image/index/警告提示_1750409571.png" alt=""> -->
                 <a href="login.html"><img src="./image/login/返回箭头_1750785377.png" alt=""></a>
                 <img src="./image/index/邮件_1750409657.png" alt="">
@@ -160,6 +160,24 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- 修改密码弹窗 -->
+    <div class="updatepwd">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="todo-dialog-newpwd" class="col-sm-3 control-label">新密码</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="todo-dialog-newpwd" placeholder="请输入新密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="button" class="btn btn-default btn-newpwd" onclick="newpwdConfirm()">确认</button>
+                    <button type="button" class="btn btn-default btn-newpwdcancel" onclick="pwdUpdateCancel()">取消</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <script src="./lib/jquery-3.6.1.min.js"></script>

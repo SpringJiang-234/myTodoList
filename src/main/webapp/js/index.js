@@ -35,11 +35,11 @@ setInterval(getCurrentTime, 30000);
 getUserName()
 function getUserName() {
     $('.left-line-4').text(`${allUserName}，您还有许多事情需要处理。现在还不能休息哦。`);
-    $('.user-name').text(`${allUserName }`);
+    $('.user-name').text(`${allUserName}`);
 }
 
 // 3.隐藏面板，只剩下看板娘和背景，多一个取消隐藏按钮
-function panelHidden(){
+function panelHidden() {
     $('.outermost-panel').toggleClass("my-hidden")
     $('#unhide').attr('style', "visibility: visible")
 }
@@ -69,4 +69,40 @@ function changeCute() {
     var s = "./image/cute/" + randomNum + ".png";
     console.log(s)
     $('#favorite-staff').attr('src', s);
+}
+
+
+// 修改密码弹窗
+function pwdUpdateDialog() {
+    $('.updatepwd').attr('style', "visibility: visible");
+}
+function pwdUpdateCancel() {
+    $('.updatepwd').attr('style', "visibility: hidden");
+}
+function newpwdConfirm() {
+    var newpwd = $('#todo-dialog-newpwd').val();
+    if (newpwd=="") {
+        alert('新密码不能为空');
+        return;
+    }
+    $.ajax({
+        url: 'user/update',
+        type: "POST",
+        dataType: "json",
+        data: {
+            'user': allUserName,
+            'pwd': newpwd,
+            'isadmin': 1,
+        },
+        success: function (res) {
+            console.log('请求成功 res = ', res)
+            pwdUpdateCancel();
+            alert('更新成功')
+            userGetList();
+        },
+        error: function (err) {
+            console.log('请求失败 err = ', err)
+            alert('更新失败')
+        }
+    });
 }
