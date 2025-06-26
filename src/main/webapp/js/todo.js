@@ -337,6 +337,7 @@ function todoAddDialogConfirm() {
             if (res.flag) {
                 todoDialogCancel();
                 alert('添加成功');
+                setClassify();
                 getList();
             } else {
                 alert('添加失败');
@@ -381,6 +382,7 @@ function todoUpdateDialogConfirm() {
             console.log('请求成功 res = ', res)
             todoDialogCancel();
             alert('更新成功')
+            setClassify();
             getList();
         },
         error: function (err) {
@@ -503,6 +505,7 @@ function todoDel(id) {
             console.log('请求成功 res = ', res)
             todoDialogCancel();
             alert('删除成功')
+            setClassify();
             getList();
         },
         error: function (err) {
