@@ -45,7 +45,7 @@ function tabClassify(classify) {
     getList();
 }
 
-// 4.仅置顶
+// 4.仅特殊
 function toptop() {
     allIstop = '2'
     getList();
@@ -97,8 +97,12 @@ function getList() {
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span>查看</span>
                         </div>
-                        <span class="todo-item-title">${item.title}</span>
-                        <span class="todo-item-en">Title：</span>
+                        <div class="todo-item-title">`;
+                if (item.istop == 2) {
+                    tbodyHtml += `<span class="glyphicon glyphicon-star" aria-hidden="true""></span>`;
+                            }
+                tbodyHtml += `<span>${item.title}</span>
+                </div><span class="todo-item-en">Title：</span>
                     </div>`
             });
             $('#todo-list').html(tbodyHtml);
@@ -190,7 +194,7 @@ var allTodoIndex = null;
 var allTodoDialogMode = 1; // 1：添加（默认），2：修改
 // 存储弹窗下拉列表选项的选择值
 var alltodoDialogTag = 'default'; //枚举，具体看数据库
-var alltodoDialogIstop = 1; //1：不置顶（否），2：置顶（是）
+var alltodoDialogIstop = 1; //1：不特殊（否），2：特殊（是）
 var alltodoDialogIscircle = 'default';  //枚举，具体看数据库
 var alltodoDialogIscomplete = 1; //1：否，2：是
 

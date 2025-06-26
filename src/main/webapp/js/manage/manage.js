@@ -92,7 +92,7 @@ $('#sideMenu .layui-nav-item a').on('click', function () {
                         </ul>
                     </div>
                     <div class="btn-group" style="margin-top:8px">
-                        <button type="button" class="btn btn-defaault">是否置顶</button>
+                        <button type="button" class="btn btn-defaault">是否特殊</button>
                         <button type="button" class="btn btn-defaault dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="caret"></span>
                             <span class="sr-only">Toggle Dropdown</span>
@@ -139,7 +139,7 @@ $('#sideMenu .layui-nav-item a').on('click', function () {
                         <th>内容</th>
                         <th>标签</th>
                         <th>分类</th>
-                        <th>是否置顶</th>
+                        <th>是否特殊</th>
                         <th>Todo循环</th>
                         <th>是否完成</th>
                         <th>操作</th>

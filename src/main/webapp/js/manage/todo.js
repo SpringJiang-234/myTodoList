@@ -1,7 +1,7 @@
 /* Todo管理全局变量 */
 // 存储筛选下拉列表选项选择值
 var allTodoTag = '';
-var allTodoIstop = ''; //'': 全部（默认），1：不置顶（否），2：置顶（是）
+var allTodoIstop = ''; //'': 全部（默认），1：不特殊（否），2：特殊（是）
 var allTodoIscircle = '';
 var allTodoIscomplete = '';
 
@@ -13,7 +13,7 @@ var allTodoIndex = null;
 var allTodoDialogMode = 1; // 1：添加（默认），2：修改
 // 存储弹窗下拉列表选项的选择值
 var alltodoDialogTag = 'default'; //枚举，具体看数据库
-var alltodoDialogIstop = 1; //1：不置顶（否），2：置顶（是）
+var alltodoDialogIstop = 1; //1：不特殊（否），2：特殊（是）
 var alltodoDialogIscircle = 'default';  //枚举，具体看数据库
 var alltodoDialogIscomplete = 1; //1：否，2：是
 
@@ -212,7 +212,7 @@ function todoResult() {
     console.log('前端函数执行中：function todoResult()')
     // 全局参数回归初始值
     allTodoTag = '';
-    allTodoIstop = ''; //'': 全部（默认），1：不置顶，2：置顶
+    allTodoIstop = ''; //'': 全部（默认），1：不特殊，2：特殊
     allTodoIscircle = '';
     allTodoIscomplete = '';
 
