@@ -389,6 +389,15 @@ function todoAddDialogConfirm() {
         });
         return;
     }
+    if ($('#todo-dialog-classify').val() == null || $('#todo-dialog-classify').val()=="") {
+        // alert('用户名和密码不能为空');
+        Swal.fire({
+            title: '提示',
+            text: '分类不能为空',
+            icon: 'warning'
+        });
+        return;
+    }
     $.ajax({
         url: 'todo/add',
         type: "POST",
