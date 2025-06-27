@@ -7,6 +7,7 @@
     <title>舟风主页</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/swiper-11.0.3/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -25,8 +26,8 @@
                 <img src="./image/index/设置_1750409551.png" alt="" onclick="pwdUpdateDialog()">
                 <!-- <img src="./image/index/警告提示_1750409571.png" alt=""> -->
                 <a href="login.html"><img src="./image/login/返回箭头_1750785377.png" alt=""></a>
-                <img src="./image/index/邮件_1750409657.png" alt="">
-                <img src="./image/index/日历图标_1750409699.png" alt="">
+                <img src="./image/index/邮件_1750409657.png" alt="" onclick="alertCreating()">
+                <img src="./image/index/日历图标_1750409699.png" alt="" onclick="alertCreating()">
             </div>
             <div class="left-line left-line-2"></div>
             <div class="left-line left-line-3">
@@ -58,11 +59,11 @@
                     <div class="swiper-scrollbar"></div>
                 </div>
                 <div class="col-md-5">
-                    <div id="friend">
+                    <div id="friend" onclick="alertCreating()">
                         <span>好友</span>
                         <img src="./image/index/用户与好友_1750489665.png" alt="">
                     </div>
-                    <div id="files">
+                    <div id="files" onclick="alertCreating()">
                         <span>档案</span>
                         <img src="./image/index/档案盒_1750490025.png" alt="">
                     </div>
@@ -79,23 +80,23 @@
                     <span id="year">&nbsp;&nbsp;&nbsp;&nbsp;</span>/<span id="month">&nbsp;&nbsp;</span>/<span id="day">&nbsp;&nbsp;</span>&nbsp;<span id="hour">&nbsp;&nbsp;</span>:<span id="minute">&nbsp;&nbsp;</span>
                 </div>
                 <div class="row" id="money">
-                    <div class="col-md-4" id="blue-money">
+                    <div class="col-md-4" id="blue-money" onclick="alertCreating()">
                         <span>99999</span>
                         <img src="./image/index/钱包_1750482856.png" alt="">
                     </div>
-                    <div class="col-md-4" id="red-money">
+                    <div class="col-md-4" id="red-money" onclick="alertCreating()">
                         <span>325325</span>
                         <div class="add-text">+</div>
                         <img src="./image/index/美元硬币_1750482932.png" alt="">
                     </div>
-                    <div class="col-md-4" id="yellow-money">
+                    <div class="col-md-4" id="yellow-money" onclick="alertCreating()">
                         <span>555</span>
                         <div class="add-text" id="add-text-2">+</div>
                         <img src="./image/index/绿宝石_1750482962.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="right-line right-line-2 row"  onclick="linkToTodoPlan()">
+            <div class="right-line right-line-2 row" onclick="alertCreating()">
                 <div class="col-md-4" id="san">
                     <div>
                         <span>13</span>
@@ -112,22 +113,22 @@
                 <div class="col-md-5" id="activity"></div>
             </div>
             <div class="right-line right-line-3 row">
-                <div class="col-md-5" id="formation">
+                <div class="col-md-5" id="formation" onclick="alertCreating()">
                     <span>编队</span>
                     <img src="./image/index/棋王_1750471038.png" alt="">
                 </div>
-                <div class="col-md-5" id="staff">
+                <div class="col-md-5" id="staff" onclick="alertCreating()">
                     <span>干员</span>
                     <img src="./image/index/棋王_1750471092.png" alt="">
                 </div>
                 <div class="col-md-2" id="black-void"></div>
             </div>
             <div class="right-line right-line-4 row">
-                <div class="col-md-4" id="shopping-center">
+                <div class="col-md-4" id="shopping-center" onclick="alertCreating()">
                     <span>采购中心</span>
                     <img src="./image/index/超市购物车_1750475766.png" alt="">
                 </div>
-                <div class="col-md-8" id="offering">
+                <div class="col-md-8" id="offering" onclick="alertCreating()">
                     <div id="offering-text">招募</div>
                     <div id="offering-content">
                         <div id="public-offering">
@@ -150,11 +151,11 @@
                     <span>任务</span>
                     <img src="./image/index/任务管理_1750471148.png" alt="">
                 </div>
-                <div class="col-md-5" id="infrastructure">
+                <div class="col-md-5" id="infrastructure" onclick="alertCreating()">
                     <span>基建</span>
                     <img src="./image/index/笑脸表情_1750481252.png" alt="">
                 </div>
-                <div class="col-md-2" id="warehouse">
+                <div class="col-md-2" id="warehouse" onclick="alertCreating()">
                     <span>仓库</span>
                     <img src="./image/index/仓库_1750482239.png" alt="">
                 </div>
@@ -182,6 +183,7 @@
 
     <script src="./lib/jquery-3.6.1.min.js"></script>
     <script src="./lib/swiper-11.0.3/js/swiper-bundle.min.js"></script>
+    <script src="./lib/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="./js/index.js"></script>
     <script>
         var swiper = new Swiper(".my-swiper", {

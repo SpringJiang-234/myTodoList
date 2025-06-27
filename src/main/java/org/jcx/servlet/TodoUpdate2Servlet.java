@@ -1,8 +1,6 @@
 package org.jcx.servlet;
 
 import com.alibaba.fastjson.JSONObject;
-import org.jcx.model.IsCircle;
-import org.jcx.model.Tag;
 import org.jcx.service.ITodoService;
 import org.jcx.service.impl.ToDoServiceImpl;
 

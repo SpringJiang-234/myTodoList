@@ -1,7 +1,6 @@
 package org.jcx.servlet;
 
 import com.alibaba.fastjson.JSONObject;
-import org.jcx.model.User;
 import org.jcx.service.IUserSerive;
 import org.jcx.service.impl.UserServiceImpl;
 
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 @WebServlet("/user/delete")
 public class UserDelServlet extends HttpServlet {

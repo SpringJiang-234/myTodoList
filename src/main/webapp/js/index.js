@@ -53,9 +53,9 @@ function linkToTodoList() {
     location.href = "todo.html?user=" + allUserName;
 }
 
-function linkToTodoPlan() {
-    location.href = "todoplan.html?user=" + allUserName;
-}
+// function linkToTodoPlan() {
+//     location.href = "todoplan.html?user=" + allUserName;
+// }
 
 // function say() {
 //     $('.left-line-4').css('visibility', 'visible');
@@ -104,5 +104,14 @@ function newpwdConfirm() {
             console.log('请求失败 err = ', err)
             alert('更新失败')
         }
+    });
+}
+
+//美丽的弹框提示：还没做
+function alertCreating() {
+    Swal.fire({
+        title: '提示',
+        text: '锐意制作中！',
+        icon: 'info'
     });
 }

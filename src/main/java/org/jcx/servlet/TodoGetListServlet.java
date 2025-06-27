@@ -4,11 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.jcx.model.IsCircle;
 import org.jcx.model.Tag;
 import org.jcx.model.Todo;
-import org.jcx.model.User;
 import org.jcx.service.ITodoService;
-import org.jcx.service.IUserSerive;
 import org.jcx.service.impl.ToDoServiceImpl;
-import org.jcx.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
