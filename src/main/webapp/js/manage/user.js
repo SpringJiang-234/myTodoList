@@ -191,6 +191,14 @@ function userDialogConfirm() {
 }
 function userAddDialogConfirm() {
     console.log('前端函数执行中：function userAddDialogConfirm()')
+    if ($('#user-dialog-user').val() == '' || $('#user-dialog-user').val() == null || $('#user-dialog-pwd').val() == '' || $('#user-dialog-pwd').val() == null) {
+        Swal.fire({
+            title: '提示',
+            text: '用户名和密码不能为空',
+            icon: 'error'
+        });
+        return;
+    }
     $.ajax({
         url: 'user/add',
         type: "POST",
@@ -233,6 +241,14 @@ function userAddDialogConfirm() {
 }
 function userUpdateDialogConfirm() {
     console.log('前端函数执行中：function userUpdateDialogConfirm()')
+    if ($('#user-dialog-user').val() == '' || $('#user-dialog-user').val() == null || $('#user-dialog-pwd').val() == '' || $('#user-dialog-pwd').val() == null) {
+        Swal.fire({
+            title: '提示',
+            text: '用户名和密码不能为空',
+            icon: 'error'
+        });
+        return;
+    }
     $.ajax({
         url: 'user/update',
         type: "POST",

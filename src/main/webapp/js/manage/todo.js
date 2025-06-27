@@ -381,6 +381,14 @@ function todoDialogConfirm() {
 }
 function todoAddDialogConfirm() {
     console.log('前端函数执行中：function todoAddDialogConfirm()')
+    if ($('#todo-dialog-user').val() == '' || $('#todo-dialog-user').val() == null) {
+        Swal.fire({
+            title: '提示',
+            text: '用户名不能为空',
+            icon: 'error'
+        });
+        return;
+    }
     $.ajax({
         url: 'todo/add',
         type: "POST",
@@ -440,6 +448,14 @@ function todoUpdateDialogConfirm() {
     console.log('前端函数执行中：function todoUpdateDialogConfirm()')
     console.log('alltodoDialogTag = ', alltodoDialogTag)
     console.log('alltodoDialogIscomplete = ', alltodoDialogIscomplete)
+    if ($('#todo-dialog-user').val() == '' || $('#todo-dialog-user').val() == null) {
+        Swal.fire({
+            title: '提示',
+            text: '用户名不能为空',
+            icon: 'error'
+        });
+        return;
+    }
     $.ajax({
         url: 'todo/update',
         type: "POST",
