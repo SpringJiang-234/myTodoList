@@ -82,7 +82,12 @@ function pwdUpdateCancel() {
 function newpwdConfirm() {
     var newpwd = $('#todo-dialog-newpwd').val();
     if (newpwd=="") {
-        alert('新密码不能为空');
+        // alert('新密码不能为空');
+        Swal.fire({
+            title: '提示',
+            text: '新密码不能为空',
+            icon: 'warning'
+        });
         return;
     }
     $.ajax({
@@ -97,12 +102,22 @@ function newpwdConfirm() {
         success: function (res) {
             console.log('请求成功 res = ', res)
             pwdUpdateCancel();
-            alert('更新成功')
+            // alert('更新成功')
+            Swal.fire({
+                title: '提示',
+                text: '更新成功',
+                icon: 'success'
+            });
             userGetList();
         },
         error: function (err) {
             console.log('请求失败 err = ', err)
-            alert('更新失败')
+            // alert('更新失败')
+            Swal.fire({
+                title: '提示',
+                text: '更新失败',
+                icon: 'error'
+            });
         }
     });
 }

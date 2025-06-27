@@ -399,10 +399,20 @@ function todoAddDialogConfirm() {
             console.log('请求成功 res = ', res)
             if (res.flag) {
                 todoDialogCancel();
-                alert('添加成功');
+                // alert('添加成功');
+                Swal.fire({
+                    title: '提示',
+                    text: '添加成功',
+                    icon: 'success'
+                });
                 todoGetList();
             } else {
-                alert('添加失败');
+                // alert('添加失败');
+                Swal.fire({
+                    title: '提示',
+                    text: '添加失败',
+                    icon: 'error'
+                });
             }
         },
         error: function (err) {
@@ -417,7 +427,12 @@ function todoAddDialogConfirm() {
                 iscircle: alltodoDialogIscircle,
                 iscomplete: alltodoDialogIscomplete
             });
-            alert('添加失败')
+            // alert('添加失败')
+            Swal.fire({
+                title: '提示',
+                text: '添加失败',
+                icon: 'error'
+            });
         }
     });
 }
@@ -443,7 +458,12 @@ function todoUpdateDialogConfirm() {
         success: function (res) {
             console.log('请求成功 res = ', res)
             todoDialogCancel();
-            alert('更新成功')
+            // alert('更新成功')
+            Swal.fire({
+                title: '提示',
+                text: '更新成功',
+                icon: 'success'
+            });
             todoGetList();
         },
         error: function (err) {
@@ -459,7 +479,12 @@ function todoUpdateDialogConfirm() {
                 iscircle: alltodoDialogIscircle,
                 iscomplete: alltodoDialogIscomplete
             });
-            alert('更新失败')
+            // alert('更新失败')
+            Swal.fire({
+                title: '提示',
+                text: '更新失败',
+                icon: 'error'
+            });
         }
     });
 }
@@ -565,13 +590,23 @@ function todoDel(id) {
         success: function (res) {
             console.log('请求成功 res = ', res)
             todoDialogCancel();
-            alert('删除成功')
+            // alert('删除成功')
+            Swal.fire({
+                title: '提示',
+                text: '删除成功',
+                icon: 'success'
+            });
             todoGetList();
         },
         error: function (err) {
             console.log('请求失败 err = ', err)
             console.log('失败参数=', { id: id });
-            alert('删除失败')
+            // alert('删除失败')
+            Swal.fire({
+                title: '提示',
+                text: '删除失败',
+                icon: 'error'
+            });
         }
     });
 
